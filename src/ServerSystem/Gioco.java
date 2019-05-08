@@ -5,6 +5,7 @@ import ClientSystem.Client;
 import java.util.ArrayList;
 
 public class Gioco {
+    private String impiccatoStringa;
     private String parolaSegreta;
     private char vettoreParolaSegreta[];
     private ArrayList<Character> tentativiErrati = new ArrayList<>();
@@ -21,6 +22,7 @@ public class Gioco {
         tentativiErrati.clear();
         parolaSegreta = diz.prendiParola();
         vettoreParolaSegreta = parolaSegreta.toLowerCase().toCharArray();
+        setDefaultImpiccatoStringa();
     }
 
     public void creaTentativo(char lett) {
@@ -29,6 +31,7 @@ public class Gioco {
         }
         tentativi.add(lett);
         verificaErrore(lett);
+        setDefaultImpiccatoStringa();
         verificaFine();
 
     }
@@ -44,10 +47,10 @@ public class Gioco {
 
     private void verificaFine() {
         if (tentativiErrati.size() >= 6) {
-            inizia();
+            setImpiccatoString("HAI PERSO!");
         }
         if (vinto(restituisciParola())) {
-            inizia();
+            setImpiccatoString("HAI VINTO!");
         }
     }
 
@@ -61,9 +64,14 @@ public class Gioco {
 
     }
 
-
+    public void setImpiccatoString(String stringa){
+        impiccatoStringa = stringa;
+    }
+    public void setDefaultImpiccatoStringa(){
+        impiccatoStringa = restituisciImpiccato() + "\n" + restituisciParola() +"\n\n" + restituisciTentErrati();
+    }
     public String getImpiccatoStringa() {
-        return restituisciImpiccato() + "\n" + restituisciParola() +"\n\n" + restituisciTentErrati();
+        return impiccatoStringa;
     }
 
     private String restituisciParola() {
@@ -97,7 +105,7 @@ public class Gioco {
             case 0:
                 return "+-----+\n" +
                         "  |   |\n" +
-                        "     |\n" +
+                        "      |\n" +
                         "      |\n" +
                         "      |\n" +
                         "      |\n" +
@@ -151,7 +159,7 @@ public class Gioco {
                         "      |\n" +
                         "=========";
             default:
-                return "Errore.";
+                return "ERRORE!";
         }
     }
 
