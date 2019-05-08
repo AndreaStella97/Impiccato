@@ -1,107 +1,91 @@
-package Impiccato;
+package ServerSystem;
+
+import ClientSystem.Client;
 
 import java.util.ArrayList;
 
 public class Gioco {
     private String parolaSegreta;
     private char vettoreParolaSegreta[];
-    private int tentativiErrati;
+    private ArrayList<Character> tentativiErrati = new ArrayList<>();
     private boolean completo = false;
     private ArrayList<Character> tentativi = new ArrayList<>();
-    private ArrayList<GiocoOsservatori> osservatori = new ArrayList<>();
 
     public Gioco() {
-        nuovaParola();
+        inizia();
     }
 
-    private void nuovaParola() {
+    public void inizia() {
         Dizionario diz = new Dizionario();
         tentativi.clear();
-        tentativiErrati = 0;
-        completo = false;
-
+        tentativiErrati.clear();
         parolaSegreta = diz.prendiParola();
         vettoreParolaSegreta = parolaSegreta.toLowerCase().toCharArray();
     }
 
     public void creaTentativo(char lett) {
         for (char lettereInTentativi : tentativi) {
-            if (lett == lettereInTentativi) return;
+            if (lett == lettereInTentativi) return ;
         }
-
         tentativi.add(lett);
         verificaErrore(lett);
-        notificaOsservatori();
         verificaFine();
+
     }
 
-    public String ottieniParolaSegreta() {
-        return parolaSegreta;
-    }
-
-    public void aggiungiOsservatori(GiocoOsservatori oss) {
-        osservatori.add(oss);
-    }
-
-    private void notificaOsservatori() {
-        for (GiocoOsservatori giocoOss : osservatori) {
-            giocoOss.aggiorna(this);
-        }
-    }
 
     private void verificaErrore(char lett) {
         for (char lettera : vettoreParolaSegreta) {
             if (lett == lettera) return;
         }
 
-        tentativiErrati += 1;
+        tentativiErrati.add(lett);
     }
 
     private void verificaFine() {
-        if (tentativiErrati >= 6) {
-            System.out.println("Hai perso!");
-            nuovaParola();
-            notificaOsservatori();
+        if (tentativiErrati.size() >= 6) {
+            inizia();
         }
-        if (completo == true) {
-            System.out.println("Hai vinto!");
-            nuovaParola();
-            notificaOsservatori();
+        if (vinto(restituisciParola())) {
+            inizia();
         }
     }
 
-    public ArrayList<Character> ottieniLettereConosciute() {
-        return tentativi;
+    private boolean vinto(String parola){
+
+        for(int i = 0; i<parola.length(); i++)
+            if (parola.charAt(i) == '_' ) {
+                return false;
+            }
+        return true;
+
     }
 
-    public void stampaImpiccato() {
-        System.out.println(restituisciImpiccato());
-        System.out.println(restituisciParola());
-    }
 
-    public String stampaImpiccatoStringa() {
-        return restituisciImpiccato() + "\n" + restituisciParola();
+    public String getImpiccatoStringa() {
+        return restituisciImpiccato() + "\n" + restituisciParola() +"\n\n" + restituisciTentErrati();
     }
 
     private String restituisciParola() {
         String parola = "";
         boolean presente;
-        completo = true;
 
         for (int i = 0; i < vettoreParolaSegreta.length; i++) {
             presente = false;
-            if ((i == 0) || (i == (vettoreParolaSegreta.length - 1))) parola += vettoreParolaSegreta[i];
+            if ((i == 0) || (i == (vettoreParolaSegreta.length - 1))) parola += vettoreParolaSegreta[i] + " ";
             else {
                 for (char lettera : tentativi) {
                     if (lettera == vettoreParolaSegreta[i]) {
-                        parola += lettera;
+                        parola += lettera + " ";
                         presente = true;
                     }
                 }
 
+                if (!presente){
+                    parola += "_";
+                }
                 parola += " ";
-                if (!presente) parola += "_";
-                completo = false;
+                
             }
         }
 
@@ -109,11 +93,11 @@ public class Gioco {
     }
 
     private String restituisciImpiccato() {
-        switch (tentativiErrati) {
+        switch (tentativiErrati.size()) {
             case 0:
                 return "+-----+\n" +
                         "  |   |\n" +
-                        "      |\n" +
+                        "     |\n" +
                         "      |\n" +
                         "      |\n" +
                         "      |\n" +
@@ -121,7 +105,7 @@ public class Gioco {
             case 1:
                 return "+-----+\n" +
                         "  |   |\n" +
-                        "  O   |\n" +
+                        " O   |\n" +
                         "      |\n" +
                         "      |\n" +
                         "      |\n" +
@@ -129,7 +113,7 @@ public class Gioco {
             case 2:
                 return "+-----+\n" +
                         "  |   |\n" +
-                        "  O   |\n" +
+                        " O   |\n" +
                         "  |   |\n" +
                         "      |\n" +
                         "      |\n" +
@@ -137,7 +121,7 @@ public class Gioco {
             case 3:
                 return "+-----+\n" +
                         "  |   |\n" +
-                        "  O   |\n" +
+                        " O   |\n" +
                         " /|   |\n" +
                         "      |\n" +
                         "      |\n" +
@@ -145,7 +129,7 @@ public class Gioco {
             case 4:
                 return "+-----+\n" +
                         "  |   |\n" +
-                        "  O   |\n" +
+                        " O   |\n" +
                         " /|\\  |\n" +
                         "      |\n" +
                         "      |\n" +
@@ -153,7 +137,7 @@ public class Gioco {
             case 5:
                 return "+-----+\n" +
                         "  |   |\n" +
-                        "  O   |\n" +
+                        " O   |\n" +
                         " /|\\  |\n" +
                         " /    |\n" +
                         "      |\n" +
@@ -161,7 +145,7 @@ public class Gioco {
             case 6:
                 return "+-----+\n" +
                         "  |   |\n" +
-                        "  O   |\n" +
+                        " O   |\n" +
                         " /|\\  |\n" +
                         " / \\  |\n" +
                         "      |\n" +
@@ -170,4 +154,14 @@ public class Gioco {
                 return "Errore.";
         }
     }
+
+    public String restituisciTentErrati(){
+        String parola="";
+        for(char c : tentativiErrati){
+             parola+=c+" ";
+        }
+        return parola;
+    }
+
+
 }
