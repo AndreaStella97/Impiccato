@@ -14,7 +14,6 @@ public class Server extends Thread{
         System.out.println("Il Server è in attesa sulla porta 8888");
         this.start();
     }
-    
 
     public void run() {
         while (true) {
@@ -62,6 +61,7 @@ public class Server extends Thread{
                             out.println(gioco.getImpiccatoStringa());
                         } else if(clientMessage.equals("")){
                         out.println(gioco.getImpiccatoStringa());
+
                      }
                         else {
                             gioco.creaTentativo(clientMessage.charAt(0));

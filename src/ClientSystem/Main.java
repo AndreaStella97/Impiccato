@@ -10,9 +10,10 @@ public class Main {
     public static void main(String[] args) throws IOException {
         Gioco gioco = new Gioco();
         Server server = new Server(gioco);
+
         Client client = new Client();
        
         Frame ig = new Frame(client);
-
+      
     }
 }
