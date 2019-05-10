@@ -3,16 +3,15 @@ package ServerSystem;
 import java.io.*;
 import java.net.*;
 import java.util.ArrayList;
-
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class Server extends Thread{
-    private Gioco gioco;
     private ServerSocket server;
     private Socket client=null;
-
-    public Server(Gioco gioco) throws IOException {
-        this.gioco = gioco;
+    private HashMap<Socket, Gioco> giochi = new HashMap<>();
+    public Server() throws IOException {
         server = new  ServerSocket(8888);
         System.out.println("Il Server è in attesa sulla porta 8888");
         this.start();
@@ -31,7 +30,7 @@ public class Server extends Thread{
           }
         }
 
-    class Connect {
+    class Connect extends Thread{
         private Socket client = null;
         BufferedReader in = null;
         PrintStream out = null;
@@ -40,23 +39,24 @@ public class Server extends Thread{
 
         public Connect(Socket clientSocket) throws IOException {
             client = clientSocket;
+            giochi.put(client, new Gioco());
             in = new BufferedReader(new InputStreamReader(client.getInputStream()));
             out = new PrintStream(client.getOutputStream(), true);
-            leggiScrivi();
+            this.start();
         }
 
-        public void leggiScrivi() {
+        public void run() {
             do {
                 try {
                     clientMessage = in.readLine();
                     if (clientMessage.equals("Inizia")) {
-                        gioco.inizia();
-                        out.println(gioco.getImpiccatoStringa());
+                        giochi.get(client).inizia();
+                        out.println(giochi.get(client).getImpiccatoStringa());
                     } else if (clientMessage.equals("")) {
-                        out.println(gioco.getImpiccatoStringa());
+                        out.println(giochi.get(client).getImpiccatoStringa());
                     } else {
-                        gioco.creaTentativo(clientMessage.charAt(0));
-                        out.println(gioco.getImpiccatoStringa());
+                        giochi.get(client).creaTentativo(clientMessage.charAt(0));
+                        out.println(giochi.get(client).getImpiccatoStringa());
                     }
                 } catch (Exception e) { }
             } while (!clientMessage.equals("chiudi"));
