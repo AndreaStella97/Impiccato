@@ -22,31 +22,41 @@ public class Client {
         }
     }
 
-
     public void connetti() throws IOException {
         socket = new Socket("localhost", 8888);
         in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         out = new PrintStream(socket.getOutputStream(), true);
     }
 
+    public void disconnetti() throws IOException {
+        out.println("chiudi");
+        in.close();
+        out.close();
+        socket.close();
+    }
+
     public String leggiMessaggio() throws IOException {
         String message="";
         String line ="";
-        while((line = in.readLine())!= null){
-            message += line +"\n";
+        while (in.ready()) {
+            message += in.readLine() + "\n";
         }
         return message;
     }
 
-    public void invia(String carattere) throws IOException {
-        connetti();
+    public void invia(String carattere) throws IOException{
         out.println(carattere);
+        while(!in.ready()){
+            
+        }
         updateObserver(leggiMessaggio());
     }
 
     public void inizia() throws IOException {
-        connetti();
         out.println("Inizia");
+        while(!in.ready()){
+
+        }
         updateObserver(leggiMessaggio());
     }
 }

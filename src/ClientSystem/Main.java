@@ -9,9 +9,12 @@ import java.io.IOException;
 public class Main {
     public static void main(String[] args) throws IOException {
         Gioco gioco = new Gioco();
-        Server server = new Server(gioco);
 
+        Server server = new Server(gioco);
         Client client = new Client();
+       // client.connetti();
+
+
        
         Frame ig = new Frame(client);
       
