@@ -12,10 +12,7 @@ public class Main {
 
         Server server = new Server(gioco);
         Client client = new Client();
-       // client.connetti();
 
-
-       
         Frame ig = new Frame(client);
       
     }

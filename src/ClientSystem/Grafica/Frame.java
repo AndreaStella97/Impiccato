@@ -10,7 +10,8 @@ public class Frame extends JFrame implements FrameObserver{
 
     private Client client;
     ConnettiPanel panel1;
-    ImpiccatoPanel panel2;
+    IniziaPanel panel2;
+    ImpiccatoPanel panel3;
 
     public Frame(Client client){
         this.client=client;
@@ -23,8 +24,10 @@ public class Frame extends JFrame implements FrameObserver{
 
         panel1 = new ConnettiPanel(client);
         panel1.addObserver(this);
-        panel2 = new ImpiccatoPanel(client);
+        panel2 = new IniziaPanel(client);
         panel2.addObserver(this);
+        panel3 = new ImpiccatoPanel(client);
+        panel3.addObserver(this);
 
         getContentPane().add(panel1);
         
@@ -48,6 +51,14 @@ public class Frame extends JFrame implements FrameObserver{
                 repaint();
                 revalidate();
                 break;
+
+            case 3:
+                getContentPane().removeAll();
+                getContentPane().add(panel3);
+                repaint();
+                revalidate();
+                break;
+
         }
 
     }

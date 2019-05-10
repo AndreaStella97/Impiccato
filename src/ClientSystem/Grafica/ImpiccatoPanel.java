@@ -26,7 +26,7 @@ public class ImpiccatoPanel extends JPanel implements ClientObserver{
         impiccato.setBackground(Color.BLACK);
         impiccato.setForeground(Color.WHITE);
 
-        JButton buttonInizia = new JButton("Inizia");
+        JButton buttonEsci = new JButton("Esci");
         JButton buttonConferma = new JButton("Conferma");
         JButton buttonFine = new JButton("Disconnetti");
 
@@ -35,8 +35,8 @@ public class ImpiccatoPanel extends JPanel implements ClientObserver{
             public void actionPerformed(ActionEvent e) {
                 JButton button = (JButton) e.getSource();
                 try {
-                    if (button.getText().equals("Inizia")) {
-                        client.inizia();
+                    if (button.getText().equals("Esci")) {
+                        updateObservers(2);
 
                     } else if (button.getText().equals("Conferma")) {
                         client.invia(lettera.getText());
@@ -52,7 +52,7 @@ public class ImpiccatoPanel extends JPanel implements ClientObserver{
                 }
             }
         };
-        buttonInizia.addActionListener(buttonListener);
+        buttonEsci.addActionListener(buttonListener);
         buttonConferma.addActionListener(buttonListener);
         buttonFine.addActionListener(buttonListener);
 
@@ -62,18 +62,14 @@ public class ImpiccatoPanel extends JPanel implements ClientObserver{
 
         JPanel p2 = new JPanel();
         p2.setLayout(new BorderLayout());
-        p2.add(buttonInizia, BorderLayout.NORTH); p2.add(p1,BorderLayout.SOUTH);
+        p2.add(buttonFine, BorderLayout.NORTH); p2.add(buttonEsci,BorderLayout.SOUTH);
 
         JPanel p3 = new JPanel();
         p3.setLayout(new BorderLayout());
-        p3.add(buttonFine, BorderLayout.NORTH);  
-
-        JPanel p4 = new JPanel();
-        p4.setLayout(new BorderLayout());
-        p4.add(p3, BorderLayout.NORTH);  p4.add(p2, BorderLayout.SOUTH);
+        p3.add(p2, BorderLayout.NORTH);  p3.add(p1, BorderLayout.SOUTH);
 
         setLayout(new BorderLayout());
-        add(p4,BorderLayout.EAST); add(impiccato, BorderLayout.WEST);
+        add(p3,BorderLayout.EAST); add(impiccato, BorderLayout.WEST);
 
     }
 
