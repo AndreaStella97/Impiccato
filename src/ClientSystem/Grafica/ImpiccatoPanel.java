@@ -4,6 +4,7 @@ import ClientSystem.Client;
 import ClientSystem.ClientObserver;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -24,7 +25,8 @@ public class ImpiccatoPanel extends JPanel implements ClientObserver{
 
     public void initPanel(){
         impiccato.setBackground(Color.BLACK);
-        impiccato.setForeground(Color.WHITE);
+        impiccato.setForeground(Color.RED);
+        impiccato.setLineWrap(true);
 
         JButton buttonEsci = new JButton("Esci");
         JButton buttonConferma = new JButton("Conferma");
@@ -44,14 +46,13 @@ public class ImpiccatoPanel extends JPanel implements ClientObserver{
                     } else  {
                         client.disconnetti();
                         updateObservers(1);
-
-
                     }
                 }catch (IOException e1) {
                     e1.printStackTrace();
                 }
             }
         };
+
         buttonEsci.addActionListener(buttonListener);
         buttonConferma.addActionListener(buttonListener);
         buttonFine.addActionListener(buttonListener);

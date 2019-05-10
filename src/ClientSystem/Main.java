@@ -12,8 +12,10 @@ public class Main {
 
         Server server = new Server();
         Client client = new Client();
+        Client client2 = new Client();
 
         Frame ig = new Frame(client);
+        Frame ig2 = new Frame(client2);
       
     }
 }

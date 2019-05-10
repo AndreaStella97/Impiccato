@@ -19,7 +19,7 @@ public class Frame extends JFrame implements FrameObserver{
         setResizable(false);
         Toolkit kit = Toolkit.getDefaultToolkit();
         Dimension dim = kit.getScreenSize();
-        setSize(dim.width/4,dim.height/4);
+        setSize(340,200);
         setLocation(dim.width/3, dim.height/3);
 
         panel1 = new ConnettiPanel(client);

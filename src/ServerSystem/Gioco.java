@@ -47,10 +47,10 @@ public class Gioco {
 
     private void verificaFine() {
         if (tentativiErrati.size() >= 6) {
-            setImpiccatoString("HAI PERSO!");
+            setImpiccatoStringa("HAI PERSO!");
         }
         if (vinto(restituisciParola())) {
-            setImpiccatoString("HAI VINTO!");
+            setImpiccatoStringa("HAI VINTO!");
         }
     }
 
@@ -64,7 +64,7 @@ public class Gioco {
 
     }
 
-    public void setImpiccatoString(String stringa){
+    public void setImpiccatoStringa(String stringa){
         impiccatoStringa = stringa;
     }
     public void setDefaultImpiccatoStringa(){
