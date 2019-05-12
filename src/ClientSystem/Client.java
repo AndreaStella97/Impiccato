@@ -37,7 +37,6 @@ public class Client {
 
     public String leggiMessaggio() throws IOException {
         String message="";
-        String line ="";
         while (in.ready()) {
             message += in.readLine() + "\n";
         }
@@ -47,9 +46,9 @@ public class Client {
     public void invia(String carattere) throws IOException{
         out.println(carattere);
         while(!in.ready()){
-            
-        }
-        updateObserver(leggiMessaggio());
+
+       }
+       updateObserver(leggiMessaggio());
     }
 
     public void inizia() throws IOException {

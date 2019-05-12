@@ -16,7 +16,6 @@ public class ConnettiPanel extends JPanel  {
     public ConnettiPanel(Client client){
         this.client = client;
         initPanel();
-
     }
 
     private void initPanel(){
