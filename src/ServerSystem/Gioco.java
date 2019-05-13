@@ -2,6 +2,7 @@ package ServerSystem;
 
 import ClientSystem.Client;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Gioco {
@@ -12,11 +13,11 @@ public class Gioco {
     private boolean completo = false;
     private ArrayList<Character> tentativi = new ArrayList<>();
 
-    public Gioco() {
+    public Gioco() throws IOException {
         inizia();
     }
 
-    public void inizia() {
+    public void inizia() throws IOException {
         Dizionario diz = new Dizionario();
         tentativi.clear();
         tentativiErrati.clear();
@@ -47,10 +48,10 @@ public class Gioco {
 
     private void verificaFine() {
         if (tentativiErrati.size() >= 6) {
-            setImpiccatoStringa("HAI PERSO!");
+            setImpiccatoStringa(parolaSegreta+"\n\nHAI PERSO!");
         }
         if (vinto(restituisciParola())) {
-            setImpiccatoStringa("HAI VINTO!");
+            setImpiccatoStringa(parolaSegreta+"\n\nHAI VINTO!");
         }
     }
 

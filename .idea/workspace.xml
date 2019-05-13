@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc4de8f4-3d6d-488c-95ef-79e1461f7f9c" name="Default Changelist" comment="hangman v.6">
+      <change afterPath="$PROJECT_DIR$/src/ServerSystem/Parole.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClientSystem/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientSystem/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClientSystem/Grafica/ImpiccatoPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientSystem/Grafica/ImpiccatoPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ServerSystem/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ServerSystem/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ServerSystem/Dizionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ServerSystem/Dizionario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ServerSystem/Gioco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ServerSystem/Gioco.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,20 +19,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ServerSystem/Gioco.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="930">
-              <caret line="66" column="35" selection-start-line="66" selection-start-column="35" selection-end-line="66" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ClientSystem/Client.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="49" column="32" selection-start-line="49" selection-start-column="32" selection-end-line="49" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="149">
+              <caret line="18" column="85" lean-forward="true" selection-start-line="18" selection-start-column="85" selection-end-line="18" selection-end-column="85" />
             </state>
           </provider>
         </entry>
@@ -40,7 +28,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ClientSystem/Grafica/Frame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
+            <state relative-caret-position="270">
               <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -88,11 +76,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ServerSystem/Dizionario.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="31" column="39" selection-start-line="31" selection-start-column="39" selection-end-line="31" selection-end-column="39" />
+            <state relative-caret-position="282">
+              <caret line="19" column="81" lean-forward="true" selection-start-line="19" selection-start-column="81" selection-end-line="19" selection-end-column="81" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -100,10 +88,19 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ServerSystem/Parole.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150000">
+              <caret line="10000" selection-start-line="10000" selection-end-line="10000" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ServerSystem/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
+            <state relative-caret-position="360">
               <caret line="51" column="60" selection-start-line="51" selection-start-column="60" selection-end-line="51" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -115,7 +112,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ClientSystem/Grafica/ImpiccatoPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
+            <state relative-caret-position="525">
               <caret line="43" column="24" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -146,15 +143,16 @@
         <option value="$PROJECT_DIR$/src/ClientSystem/ClientObserver.java" />
         <option value="$PROJECT_DIR$/src/ClientSystem/Grafica/Panel.java" />
         <option value="$PROJECT_DIR$/src/ClientSystem/Grafica/FrameObserver.java" />
-        <option value="$PROJECT_DIR$/src/ServerSystem/Gioco.java" />
         <option value="$PROJECT_DIR$/src/ClientSystem/Grafica/Frame.java" />
         <option value="$PROJECT_DIR$/src/ClientSystem/Grafica/IniziaPanel.java" />
-        <option value="$PROJECT_DIR$/src/ServerSystem/Dizionario.java" />
         <option value="$PROJECT_DIR$/src/ClientSystem/Grafica/ConnettiPanel.java" />
         <option value="$PROJECT_DIR$/src/ClientSystem/Main.java" />
         <option value="$PROJECT_DIR$/src/ClientSystem/Grafica/ImpiccatoPanel.java" />
         <option value="$PROJECT_DIR$/src/ServerSystem/Server.java" />
         <option value="$PROJECT_DIR$/src/ClientSystem/Client.java" />
+        <option value="$PROJECT_DIR$/src/ServerSystem/Parole.txt" />
+        <option value="$PROJECT_DIR$/src/ServerSystem/Gioco.java" />
+        <option value="$PROJECT_DIR$/src/ServerSystem/Dizionario.java" />
       </list>
     </option>
   </component>
@@ -169,6 +167,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -191,13 +190,6 @@
               <item name="Impiccato" type="b2602c69:ProjectViewProjectNode" />
               <item name="Impiccato" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="ClientSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="Grafica" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Impiccato" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Impiccato" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="ServerSystem" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -205,13 +197,12 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557707051276" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557785964009" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -281,7 +272,8 @@
       <workItem from="1557595886373" duration="1738000" />
       <workItem from="1557617773124" duration="7741000" />
       <workItem from="1557671596033" duration="8967000" />
-      <workItem from="1557705614966" duration="1271000" />
+      <workItem from="1557705614966" duration="1467000" />
+      <workItem from="1557784391185" duration="1482000" />
     </task>
     <task id="LOCAL-00001" summary="hangman v.2">
       <created>1557329758597</created>
@@ -353,17 +345,23 @@
       <option name="project" value="LOCAL" />
       <updated>1557625615301</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="hangman v.6">
+      <created>1557707062893</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1557707062894</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59958000" />
+    <option name="totallyTimeSpent" value="61475000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="28" width="1301" height="740" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19601594" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1992032" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -482,10 +480,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ServerSystem/Gioco.java">
+    <entry file="file://$PROJECT_DIR$/src/ClientSystem/Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="930">
-          <caret line="66" column="35" selection-start-line="66" selection-start-column="35" selection-end-line="66" selection-end-column="35" />
+        <state relative-caret-position="675">
+          <caret line="49" column="32" selection-start-line="49" selection-start-column="32" selection-end-line="49" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClientSystem/Grafica/Frame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -520,29 +531,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ServerSystem/Dizionario.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="31" column="39" selection-start-line="31" selection-start-column="39" selection-end-line="31" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientSystem/Grafica/Frame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ClientSystem/Grafica/ImpiccatoPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
+        <state relative-caret-position="525">
           <caret line="43" column="24" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -552,20 +543,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientSystem/Client.java">
+    <entry file="file://$PROJECT_DIR$/src/ServerSystem/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="49" column="32" selection-start-line="49" selection-start-column="32" selection-end-line="49" selection-end-column="32" />
+        <state relative-caret-position="360">
+          <caret line="51" column="60" selection-start-line="51" selection-start-column="60" selection-end-line="51" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ServerSystem/Server.java">
+    <entry file="file://$PROJECT_DIR$/src/ServerSystem/Parole.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="51" column="60" selection-start-line="51" selection-start-column="60" selection-end-line="51" selection-end-column="60" />
+        <state relative-caret-position="150000">
+          <caret line="10000" selection-start-line="10000" selection-end-line="10000" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ServerSystem/Gioco.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="18" column="85" lean-forward="true" selection-start-line="18" selection-start-column="85" selection-end-line="18" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ServerSystem/Dizionario.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="19" column="81" lean-forward="true" selection-start-line="19" selection-start-column="81" selection-end-line="19" selection-end-column="81" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

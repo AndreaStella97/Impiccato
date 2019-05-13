@@ -1,35 +1,22 @@
 package ServerSystem;
 
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Random;
 
 public class Dizionario {
     private ArrayList<String> parole = new ArrayList<>();
 
-    public Dizionario() {
+    public Dizionario() throws IOException {
         this.aggiungiParole();
     }
 
-    private void aggiungiParole() {
-        this.parole.add("Sternocleidomastoideo");
-        this.parole.add("Jojoba");
-        this.parole.add("Entomofago");
-        this.parole.add("Abs");
-        this.parole.add("Catecolamina");
-        this.parole.add("Subecumenico");
-        this.parole.add("Usufruttuario");
-        this.parole.add("Catafratto");
-        this.parole.add("Sibaritico");
-        this.parole.add("Fruttivendolo");
-        this.parole.add("Oligominerale");
-        this.parole.add("Astigmatismo");
-        this.parole.add("Parallelepipedo");
-        this.parole.add("Oligominerale");
-        this.parole.add("Balaustra");
-        this.parole.add("Lalofobia");
-        this.parole.add("Docimastica");
-        this.parole.add("Consentaneo");
+    private void aggiungiParole() throws IOException {
+        BufferedReader buf = new BufferedReader(new FileReader(new File("src/ServerSystem/Parole.txt")));
+        while(buf.ready()){
+            parole.add(buf.readLine());
+        }
     }
 
     public String prendiParola() {
