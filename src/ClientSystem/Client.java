@@ -29,7 +29,7 @@ public class Client {
     }
 
     public void disconnetti() throws IOException {
-        out.println("chiudi");
+        out.print("chiudi\n");
         in.close();
         out.close();
         socket.close();
@@ -37,6 +37,9 @@ public class Client {
 
     public String leggiMessaggio() throws IOException {
         String message="";
+        while(!in.ready()){
+
+        }
         while (in.ready()) {
             message += in.readLine() + "\n";
         }
@@ -44,18 +47,14 @@ public class Client {
     }
 
     public void invia(String carattere) throws IOException{
-        out.println(carattere);
-        while(!in.ready()){
-
-       }
-       updateObserver(leggiMessaggio());
+        if(carattere.length()==1) {
+            out.print(carattere.charAt(0) + "\n");
+            updateObserver(leggiMessaggio());
+        }
     }
 
     public void inizia() throws IOException {
-        out.println("Inizia");
-        while(!in.ready()){
-
-        }
+        out.print("inizia\n");
         updateObserver(leggiMessaggio());
     }
 }

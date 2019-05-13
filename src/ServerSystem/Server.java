@@ -46,14 +46,14 @@ public class Server extends Thread{
             while (!clientMessage.equals("chiudi")){
                 try {
                     clientMessage = in.readLine();
-                    if (clientMessage.equals("Inizia")) {
+                    if (clientMessage.equals("inizia")) {
                         gioco.inizia();
-                        out.println(gioco.getImpiccatoStringa());
-                    } else if (clientMessage.equals("")) {
-                        out.println(gioco.getImpiccatoStringa());
-                    } else {
+                        out.print(gioco.getImpiccatoStringa()+"\n");
+                    } else if (clientMessage.length()==1 && Character.isLetter(clientMessage.charAt(0))) {
                         gioco.creaTentativo(clientMessage.charAt(0));
-                        out.println(gioco.getImpiccatoStringa());
+                        out.print(gioco.getImpiccatoStringa()+"\n");
+                    } else {
+                        out.print(gioco.getImpiccatoStringa()+"\nLETTERA NON VALIDA!"+"\n");
                     }
                 } catch (Exception e) { }
             }

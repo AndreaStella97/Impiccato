@@ -42,6 +42,7 @@ public class ImpiccatoPanel extends JPanel implements ClientObserver{
                     } else if (button.getText().equals("Conferma")) {
                         client.invia(lettera.getText());
                         lettera.setText("");
+
                     } else  {
                         client.disconnetti();
                         updateObservers(1);
